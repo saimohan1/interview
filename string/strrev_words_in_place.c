@@ -18,7 +18,7 @@ static void reverse_words(char *str)
 {
 	int start = 0;
 
-	for (int end = 1; str[end] != '\0'; end++) {
+	for (int end = 0; str[end] != '\0'; end++) {
 		if (str[end] == ' ') {
 			reverse(str, start, end - 1);	
 			start = end + 1;

@@ -12,7 +12,7 @@ int main() {
 		} else if (arr[first] + arr[last] < target) {
 			first++;
 		} else if (arr[first] + arr[last] == target) {
-			printf("Piar (%d, %d)\n", arr[first], arr[last]);
+			printf("Pair (%d, %d)\n", arr[first], arr[last]);
 			first++;
 			last--;
 		}
