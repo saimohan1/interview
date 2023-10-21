@@ -1,28 +1,20 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-static bool binary_search_num(int *arr, int len, int num)
+/* Linear Search */
+/* Time Complexity: O(n) */
+
+static bool
+linear_search_num(int *arr, int len, int num)
 {
 	bool found = false;
-	int low = 0;
-	int high = len -1;
-	int mid;
-
-	while (low <= high) {
-		mid = low + (high - low) / 2;
-		
-		if (arr[mid] == num) {
+	
+	for (int i = 0; i < len -1; i++) {
+		if (arr[i] == num) {
 			found = true;
 			break;
-		}		
-
-		if (num < arr[mid]) {
-			high = mid - 1;
-		} else {
-			low = mid + 1;
 		}
-	}
-
+	}	
 	return found;
 }
 
@@ -42,7 +34,7 @@ int main() {
 	printf("Please enter the number to search: ");
 	scanf("%d", &number);
 
-	printf("The number is %s in the array\n", binary_search_num(arr, len, number) == true ? "present" : "not present");
+	printf("The number is %s in the array\n", linear_search_num(arr, len, number) == true ? "present" : "not present");
 		
 	return 0;
 }
